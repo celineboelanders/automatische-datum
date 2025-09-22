@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Automatische Datum</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 3em;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="datum"></div>
+
+  <script>
+    function updateDatum() {
+      const dagen = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
+      const maanden = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+      
+      const nu = new Date();
+      const dagNaam = dagen[nu.getDay()];
+      const dagNummer = nu.getDate();
+      const maandNaam = maanden[nu.getMonth()];
+      const jaar = nu.getFullYear();
+
+      const datumString = `${dagNaam} ${dagNummer} ${maandNaam} ${jaar}`;
+      document.getElementById('datum').textContent = datumString;
+    }
+
+    updateDatum();
+  </script>
+</body>
+</html>
